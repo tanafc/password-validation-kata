@@ -57,4 +57,12 @@ describe("Password validator", () => {
 
     expect(isValid).toBe(false)
   })
+
+  it("validates a password that contains a 0 as number", () => {
+    const passwordWithZero = "Password_0"
+
+    const isValid = Password.ensureIsValid(passwordWithZero)
+
+    expect(isValid).toBe(true)
+  })
 })
