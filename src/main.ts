@@ -3,14 +3,21 @@ export class Password {
 
   static ensureIsValid(password: string) {
     return (
-      this.ensureIsLongEnough(password) && this.ensureHasAnUppercase(password) && password !== password.toUpperCase()
+      this.ensureIsLongEnough(password) &&
+      this.ensureContainsAnUppercase(password) &&
+      this.ensureContainsALowercase(password)
     )
   }
+
   private static ensureIsLongEnough(password: string) {
     return password.length > this.minLength
   }
 
-  private static ensureHasAnUppercase(password: string) {
+  private static ensureContainsAnUppercase(password: string) {
     return password.toLowerCase() !== password
+  }
+
+  private static ensureContainsALowercase(password: string) {
+    return password !== password.toUpperCase()
   }
 }
