@@ -4,6 +4,6 @@ export class Password {
   static ensureIsValid(password: string) {
     const validation = password.length > this.minLength
 
-    return validation
+    return validation && password.toLowerCase() !== password
   }
 }
