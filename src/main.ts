@@ -24,7 +24,7 @@ export class Password {
   }
 
   private static ensureContainsANumber(password: string) {
-    return password.split("").some((character) => !!Number(character))
+    return password.split("").some((character) => !isNaN(Number(character)))
   }
 
   private static ensureContainsAnUnderscore(password: string) {
