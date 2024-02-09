@@ -41,4 +41,12 @@ describe("Password validator", () => {
 
     expect(isValid).toBe(false)
   })
+
+  it("validates that the password contains a number", () => {
+    const letterPassword = "Password_s"
+
+    const isValid = Password.ensureIsValid(letterPassword)
+
+    expect(isValid).toBe(false)
+  })
 })
