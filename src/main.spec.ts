@@ -1,5 +1,5 @@
-import { describe, it, expect } from "vitest"
-import { validatePassword } from "./main.js"
+import { describe, expect, it } from "vitest"
+import { Password } from "./main.js"
 
 // Tener más de 8 caracteres
 // Contener una letra mayúscula
@@ -13,7 +13,7 @@ describe("Password validator", () => {
   it("validates a password", () => {
     const password = "Password_1"
 
-    const isValid = validatePassword(password)
+    const isValid = Password.ensureIsValid(password)
 
     expect(isValid).toBe(true)
   })
@@ -21,7 +21,7 @@ describe("Password validator", () => {
   it("validates that the password is long enough", () => {
     const shortPassword = "Passw_1"
 
-    const isValid = validatePassword(shortPassword)
+    const isValid = Password.ensureIsValid(shortPassword)
 
     expect(isValid).toBe(false)
   })

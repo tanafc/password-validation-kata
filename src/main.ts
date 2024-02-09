@@ -1,5 +1,9 @@
-export function validatePassword(password: string) {
-  const validation = password.length > 7
+export class Password {
+  private static readonly minLength: number = 8
 
-  return validation
+  static ensureIsValid(password: string) {
+    const validation = password.length > this.minLength
+
+    return validation
+  }
 }
