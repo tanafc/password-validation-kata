@@ -33,4 +33,12 @@ describe("Password validator", () => {
 
     expect(isValid).toBe(false)
   })
+
+  it("validates that the password contains a lowercase character", () => {
+    const uppercasePassword = "PASSWORD_1"
+
+    const isValid = Password.ensureIsValid(uppercasePassword)
+
+    expect(isValid).toBe(false)
+  })
 })
