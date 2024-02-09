@@ -1,9 +1,11 @@
 import { describe, it, expect } from "vitest"
-import { myFunction } from "./main.js"
+import { validatePassword } from "./main.js"
 
-describe("Default test", () => {
-  it("should work", () => {
-    const result = myFunction()
+describe("Password validator", () => {
+  it("validates a password", () => {
+    const password = "dummy"
+
+    const result = validatePassword(password)
 
     expect(result).toBe(true)
   })
