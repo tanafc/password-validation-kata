@@ -49,4 +49,12 @@ describe("Password validator", () => {
 
     expect(isValid).toBe(false)
   })
+
+  it("validates that the password contains an underscore", () => {
+    const passwordWithoutUnderscore = "Password1"
+
+    const isValid = Password.ensureIsValid(passwordWithoutUnderscore)
+
+    expect(isValid).toBe(false)
+  })
 })
