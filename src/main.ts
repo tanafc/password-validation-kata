@@ -7,7 +7,7 @@ export class Password {
       this.ensureContainsAnUppercase(password) &&
       this.ensureContainsALowercase(password) &&
       this.ensureContainsANumber(password) &&
-      password.split("").some((character) => character === "_")
+      this.ensureContainsAnUnderscore(password)
     )
   }
 
@@ -25,5 +25,9 @@ export class Password {
 
   private static ensureContainsANumber(password: string) {
     return password.split("").some((character) => !!Number(character))
+  }
+
+  private static ensureContainsAnUnderscore(password: string) {
+    return password.includes("_")
   }
 }
