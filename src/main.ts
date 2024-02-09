@@ -5,7 +5,8 @@ export class Password {
     return (
       this.ensureIsLongEnough(password) &&
       this.ensureContainsAnUppercase(password) &&
-      this.ensureContainsALowercase(password)
+      this.ensureContainsALowercase(password) &&
+      this.ensureContainsANumber(password)
     )
   }
 
@@ -19,5 +20,9 @@ export class Password {
 
   private static ensureContainsALowercase(password: string) {
     return password !== password.toUpperCase()
+  }
+
+  private static ensureContainsANumber(password: string) {
+    return password.split("").some((character) => !!Number(character))
   }
 }
