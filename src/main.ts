@@ -1,3 +1,5 @@
 export function validatePassword(password: string) {
-  return true
+  const validation = password.length > 7
+
+  return validation
 }
