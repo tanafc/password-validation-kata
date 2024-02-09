@@ -6,7 +6,8 @@ export class Password {
       this.ensureIsLongEnough(password) &&
       this.ensureContainsAnUppercase(password) &&
       this.ensureContainsALowercase(password) &&
-      this.ensureContainsANumber(password)
+      this.ensureContainsANumber(password) &&
+      password.split("").some((character) => character === "_")
     )
   }
 

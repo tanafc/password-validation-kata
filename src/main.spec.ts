@@ -43,7 +43,7 @@ describe("Password validator", () => {
   })
 
   it("validates that the password contains a number", () => {
-    const letterPassword = "Password_s"
+    const letterPassword = "Password_"
 
     const isValid = Password.ensureIsValid(letterPassword)
 
