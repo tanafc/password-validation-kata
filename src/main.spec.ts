@@ -13,16 +13,16 @@ describe("Password validator", () => {
   it("validates a password", () => {
     const password = "Password_1"
 
-    const result = validatePassword(password)
+    const isValid = validatePassword(password)
 
-    expect(result).toBe(true)
+    expect(isValid).toBe(true)
   })
 
   it("validates that the password is long enough", () => {
-    const incorrectPassword = "Passw_1"
+    const shortPassword = "Passw_1"
 
-    const result = validatePassword(incorrectPassword)
+    const isValid = validatePassword(shortPassword)
 
-    expect(result).toBe(false)
+    expect(isValid).toBe(false)
   })
 })
